@@ -3,15 +3,11 @@ using System.Collections;
 
 public class spawnbullet : MonoBehaviour
 {
-	
+	public GameObject shoot;
+
 
 	// Use this for initializatio
-
-
-	// Use this for initialization
-	public GameObject target;
 	
-	// Use this for initialization
 	void Start () {
 		
 	}
@@ -19,17 +15,19 @@ public class spawnbullet : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began)
-		{
-			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-			
-			if(Physics.Raycast(ray,out hit))
-				if(hit.collider != null)
-					
-					Instantiate(target,hit.point,transform.rotation);
-		}
+
 		
+	}
+
+
+	public void fightbullet()
+	{
+
+
+
+		Instantiate(shoot, Vector3.forward, Quaternion.identity);
+
+
 	}
 
 	}
